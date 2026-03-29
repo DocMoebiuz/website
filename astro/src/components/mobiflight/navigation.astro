@@ -4,6 +4,7 @@ import IconDocs from "@/components/mobiflight/icons/icon-docs.astro"
 import IconShop from "@/components/mobiflight/icons/icon-shop.astro"
 import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
 import Separator from "@/components/starwind/separator"
+import IconDiscord from "@/components/mobiflight/icons/icon-discord.astro"
 ---
 
 <div
@@ -49,15 +50,17 @@ import Separator from "@/components/starwind/separator"
         ><IconShop /><span class="hidden lg:inline">Shop</span></a
       >
       <a
+        class="flex items-center gap-1"
         href="https://mobiflight.com/discord"
         target="_blank"
-        rel="noopener noreferrer">Support</a
+        rel="noopener noreferrer"
+        ><IconDiscord /><span class="hidden lg:inline">Support</span></a
       >
       <Button
         href="/download"
         size="sm"
         class="hidden lg:flex bg-background text-foreground hover:bg-background/80"
-        ><IconDownload /> Download</Button
+        ><IconDownload />Download</Button
       >
     </div>
 
