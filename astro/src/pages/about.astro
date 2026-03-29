@@ -4,15 +4,35 @@ import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import Button from "@/components/starwind/button/Button.astro"
 import Badge from "@/components/starwind/badge/Badge.astro"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/starwind/card"
 
 const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 
 const simulators = ["MSFS 2024", "MSFS 2020", "X-Plane 12", "X-Plane 11", "P3D", "FSX"]
 
 const usp = [
-  "Free and open-source platform for serious home cockpit builders",
-  "Works for both plug-and-play users and advanced DIY creators",
-  "Strong ecosystem around hardware, firmware, and shared presets",
+  {
+    title: "Plug-and-play and DIY friendly",
+    teaser: "Start with off-the-shelf hardware or build your own cockpit panels with Arduino and Raspberry Pi.",
+  },
+  {
+    title: "Works with major simulators",
+    teaser: "Control your setup in Microsoft Flight Simulator, X-Plane, and other leading simulation platforms.",
+  },
+  {
+    title: "Open source and community-driven",
+    teaser: "Use MobiFlight for free, improve it together, and learn from one of the most active sim communities.",
+  },
+  {
+    title: "From first switch to full cockpit",
+    teaser: "Scale from a small home setup to complex multi-module cockpits with one consistent toolchain.",
+  },
 ]
 
 const team = [
@@ -52,9 +72,18 @@ const team = [
   <Container>
     <section class="py-8 border-t">
       <h2 class="text-3xl font-bold mb-4">Features and USPs</h2>
-      <ul class="list-disc pl-6 mb-6 flex flex-col gap-2">
-        {usp.map((item) => <li>{item}</li>)}
-      </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        {usp.map((item) => (
+          <Card>
+            <CardHeader>
+              <CardTitle>{item.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{item.teaser}</CardDescription>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
       <h3 class="text-xl font-semibold mb-3">Supported Simulators</h3>
       <div class="flex flex-wrap gap-2">
         {simulators.map((sim) => (

@@ -1,0 +1,45 @@
+---
+import Container from "@/components/mobiflight/container.astro"
+import NewsCard from "@/components/mobiflight/news-card.astro"
+
+const latestNews = [
+  {
+    date: "March 15, 2026",
+    title: "MobiFlight v11 Released",
+    teaser: "Fresh new look, redesigned UI, new project concepts and easier sharing. The biggest release ever.",
+    href: "/download",
+  },
+  {
+    date: "February 10, 2026",
+    title: "FSWeekend 2026 Recap",
+    teaser: "We had an amazing time meeting the community. Thank you to everyone who stopped by.",
+    href: "/news",
+  },
+  {
+    date: "January 5, 2026",
+    title: "New Hardware Support Added",
+    teaser: "Raspberry Pi Pico W and several new Arduino-compatible boards are now fully supported.",
+    href: "/news",
+  },
+]
+---
+
+<!-- News & Updates -->
+<Container>
+  <section class="py-8 border-t">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-3xl font-bold mb-2">News & Updates</h2>
+        <p class="text-muted-foreground">
+          Latest announcements, releases, and community highlights.
+        </p>
+      </div>
+      <a href="/news" class="text-primary font-semibold underline"
+        >Take me to the news →</a
+      >
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {latestNews.map((entry) => <NewsCard {...entry} />)}
+    </div>
+  </section>
+</Container>

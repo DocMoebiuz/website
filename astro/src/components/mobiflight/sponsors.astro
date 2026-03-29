@@ -1,0 +1,55 @@
+---
+import Container from "@/components/mobiflight/container.astro"
+import sponsorData from "@/data/sponsors.json"
+
+type Sponsor = {
+  name: string
+  logo: string
+  href: string | null
+  amount: number
+  size: number
+}
+
+const sponsors = (sponsorData as Sponsor[]).toSorted((a, b) => {
+  if (b.amount !== a.amount) return b.amount - a.amount
+  return a.name.localeCompare(b.name)
+})
+---
+
+<!-- Sponsor Wall -->
+<Container>
+  <section class="py-8 border-t">
+    <h2 class="text-3xl font-bold mb-2">Powered by Our Sponsors</h2>
+    <p class="text-muted-foreground mb-6">
+      MobiFlight is free because of the amazing people and companies who support
+      it.
+    </p>
+    <div class="flex flex-wrap items-center gap-6">
+      {sponsors.map((sponsor) =>
+        sponsor.href ? (
+          <a href={sponsor.href} target="_blank" rel="noopener noreferrer" title={`Visit the ${sponsor.name} website`}>
+            <img
+              src={sponsor.logo}
+              alt={`${sponsor.name} logo`}
+              class="w-auto object-contain hover:grayscale-0 transition-all"
+              style={`max-height: ${sponsor.size}px;`}
+            />
+          </a>
+        ) : (
+          <img
+            src={sponsor.logo}
+            alt={`${sponsor.name} logo`}
+            class="w-auto object-contain"
+            style={`max-height: ${sponsor.size}px;`}
+          />
+        )
+      )}
+    </div>
+    <a
+      href="https://github.com/sponsors/MobiFlight"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="underline text-primary font-semibold">Become a Sponsor →</a
+    >
+  </section>
+</Container>

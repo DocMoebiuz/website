@@ -1,0 +1,93 @@
+[
+  {
+    "name": "VKB Sim",
+    "logo": "/sponsors/vkb_logo.png",
+    "href": "https://vkb-sim.pro/?utm_source=mobiflight",
+    "amount": 200,
+    "size": 130
+  },
+  {
+    "name": "Simionic",
+    "logo": "/sponsors/simionic-logo.png",
+    "href": "https://www.simionic.net/?ref=mobiflight",
+    "amount": 100,
+    "size": 70
+  },
+  {
+    "name": "miniCockpit",
+    "logo": "/sponsors/minicockpit-logo.png",
+    "href": "https://www.minicockpit.com/?ref=mobiflight",
+    "amount": 100,
+    "size": 95
+  },
+  {
+    "name": "CoreFlightTech",
+    "logo": "/sponsors/core-logo-optimized.png",
+    "href": "https://coreflighttech.com/?ref=mobiflight",
+    "amount": 0,
+    "size": 125
+  },
+  {
+    "name": "FlightSimBuilder",
+    "logo": "/sponsors/FlightSimBuilder-Logo.png",
+    "href": "https://flightsimbuilder.com/?ref=mobiflight",
+    "amount": 100,
+    "size": 75
+  },
+  {
+    "name": "WingFlash",
+    "logo": "/sponsors/wingflash-logo.svg",
+    "href": null,
+    "amount": 0,
+    "size": 85
+  },
+  {
+    "name": "FliteSim",
+    "logo": "/sponsors/flitesim-logo.png",
+    "href": "https://flitesim.com/?ref=mobiflight",
+    "amount": 200,
+    "size": 150
+  },
+  {
+    "name": "Propwash Simulation",
+    "logo": "/sponsors/propwash-logo.png",
+    "href": "https://www.propwashsim.com/?ref=mobiflight",
+    "amount": 100,
+    "size": 200
+  },
+  {
+    "name": "Rowsfire",
+    "logo": "/sponsors/rowsfire-logo-small.png",
+    "href": "https://rowsfire.com/?ref=qkxijpvj&utm_source=mobiflight",
+    "amount": 50,
+    "size": 100
+  },
+  {
+    "name": "WingFlex",
+    "logo": "/sponsors/wingflex-logo.png",
+    "href": "https://wingflex.com/?ref=mobiflight",
+    "amount": 200,
+    "size": 70
+  },
+  {
+    "name": "ProDeskSim",
+    "logo": "/sponsors/prodesksim-small.png",
+    "href": "https://prodesksim.com/?ref=mobiflight",
+    "amount": 100,
+    "size": 65
+  },
+  {
+    "name": "Octavi",
+    "logo": "/sponsors/octavi-logo-small.png",
+    "href": "https://octavi.net/?ref=mobiflight",
+    "amount": 100,
+    "size": 180
+  },
+  {
+    "name": "LoungePilot",
+    "logo": "/sponsors/loungepilot.png",
+    "href": "https://www.loungepilot.com/?ref=mobiflight&utm_source=mobiflight",
+    "amount": 100,
+    "size": 120
+  }
+]
