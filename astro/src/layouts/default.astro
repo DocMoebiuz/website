@@ -1,25 +1,36 @@
 ---
 // import BaseHead from '../components/BaseHead.astro';
 // import Footer from '../components/Footer.astro';
-const { title } = Astro.props;
+const { title } = Astro.props
 // style import
-import "@/styles/starwind.css";
+import "@/styles/mobiflight.css"
 ---
+
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <BaseHead title={title}/> -->
   </head>
-  <body>
-    <nav class="flex flex-row gap-4">
-      <a href="#">Home</a>
-      <a href="#">Posts</a>
-      <a href="#">Contact</a>
-    </nav>
+  <body class="flex flex-col">
+    <div class="flex justify-center bg-linear-to-br from-sky-500 to-emerald-500 dark:from-indigo-500/10 dark:via-sky-500/0 dark:via-70% dark:to-emerald-500/5">
+      <nav
+        class="flex flex-row gap-8 py-4 items-center w-full max-w-6xl justify-items-start font-semibold uppercase text-white text-lg"
+      >
+        <img
+          src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
+          alt="Logo"
+          class="h-8 mr-4"
+        />
+        <a href="#" class="">Boards & Wiring</a>
+        <a href="#" class="">Posts</a>
+        <a href="#" class="">Contact</a>
+      </nav>
+    </div>
     <h1>{title}</h1>
     <article>
-      <slot /> <!-- your content is injected here -->
+      <slot />
+      <!-- your content is injected here -->
     </article>
     <!-- <Footer /> -->
   </body>
