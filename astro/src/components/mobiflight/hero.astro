@@ -1,14 +1,29 @@
 ---
 import Button from "@/components/starwind/button/Button.astro"
 import Container from "@/components/mobiflight/container.astro"
+
+type ButtonVariant =
+  | "default"
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "ghost"
+  | "info"
+  | "success"
+  | "warning"
+  | "error"
+
 interface Props {
   headline: string
   tagline: string
-  ctaText?: string
-  ctaLink?: string
+  ctas?: {
+    text: string
+    link: string
+    variant: ButtonVariant
+  }[]
   imageSrc: string
 }
-const { headline, tagline, ctaText, ctaLink, imageSrc } = Astro.props
+const { headline, tagline, ctas, imageSrc } = Astro.props
 ---
 
 <section
@@ -21,7 +36,16 @@ const { headline, tagline, ctaText, ctaLink, imageSrc } = Astro.props
         {headline}
       </h1>
       <p class="text-2xl">{tagline}</p>
-      {ctaText && ctaLink && <Button href={ctaLink}>{ctaText}</Button>}
+      <div class="flex flex-row gap-2">
+      {
+        ctas &&
+          ctas.map((cta) => (
+            <Button variant={cta.variant} href={cta.link}>
+              {cta.text}
+            </Button>
+          ))
+      }
+      </div>
     </div>
   </Container>
 </section>

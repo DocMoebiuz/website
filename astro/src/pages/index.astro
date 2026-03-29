@@ -13,8 +13,10 @@ const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepa
   <Hero
     headline="Manage your flight sim hardware"
     tagline="Easy. Free. 100% Open Source."
-    ctaText="Download Free"
-    ctaLink="/download"
+    ctas={[
+      { text: "Download Free", link: "/download", variant: "primary" },
+      { text: "View Docs", link: "https://docs.mobiflight.com", variant: "outline" }
+    ]}
     imageSrc={heroImage}
   />
   <ValueProposition />

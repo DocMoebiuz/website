@@ -7,7 +7,7 @@ type Sponsor = {
   logo: string
   href: string | null
   amount: number
-  size: number
+  sizeClass: string
 }
 
 const sponsors = (sponsorData as Sponsor[]).toSorted((a, b) => {
@@ -15,15 +15,6 @@ const sponsors = (sponsorData as Sponsor[]).toSorted((a, b) => {
   return a.name.localeCompare(b.name)
 })
 
-const sizeToClass = (size: number) => {
-  if (size >= 180) return "h-44"
-  if (size >= 150) return "h-36"
-  if (size >= 125) return "h-32"
-  if (size >= 110) return "h-28"
-  if (size >= 95) return "h-24"
-  if (size >= 80) return "h-20"
-  return "h-16"
-}
 ---
 
 <!-- Sponsor Wall -->
@@ -49,7 +40,7 @@ const sizeToClass = (size: number) => {
               alt={`${sponsor.name} logo`}
               class:list={[
                 "w-auto max-w-full object-contain hover:grayscale-0 transition-all",
-                sizeToClass(sponsor.size),
+                sponsor.sizeClass,
               ]}
             />
           </a>
@@ -60,7 +51,7 @@ const sizeToClass = (size: number) => {
               alt={`${sponsor.name} logo`}
               class:list={[
                 "w-auto max-w-full object-contain",
-                sizeToClass(sponsor.size),
+                sponsor.sizeClass,
               ]}
             />
           </div>

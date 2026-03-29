@@ -2,7 +2,7 @@
   font-family: "Manrope";
   src: url("/font/Manrope-VariableFont_wght.woff2") format("woff2");
   font-style: normal;
-  font-weight: 200 800; 
+  font-weight: 200 800;
   font-display: optional;
 }
 
@@ -11,7 +11,19 @@
 @theme {
   --font-display: "Manrope", sans-serif;
   --font-sans: "Manrope", sans-serif;
-} 
+}
+
+:root {
+  --primary: rgb(51, 102, 204);
+  --primary-foreground: rgb(255, 255, 255);
+  --primary-accent: rgb(40, 85, 180);
+}
+
+.dark {
+  --primary: rgb(74, 124, 224);
+  --primary-foreground: rgb(9, 14, 26);
+  --primary-accent: rgb(105, 150, 236);
+}
 
 @layer base {
   html {
