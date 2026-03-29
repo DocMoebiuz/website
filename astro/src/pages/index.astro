@@ -1,7 +1,16 @@
 ---
 import Default from "../layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+
+const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 ---
 
 <Default title="MobiFlight">
-  <h1>MobiFlight</h1>
+  <Hero
+    headline="Welcome to MobiFlight"
+    tagline="Your ultimate flight simulation companion"
+    ctaText="Get Started"
+    ctaLink="/download"
+    imageSrc={heroImage}
+  />
 </Default>

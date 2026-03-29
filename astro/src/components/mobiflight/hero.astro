@@ -1,0 +1,31 @@
+---
+import Button from "@/components/starwind/button/Button.astro"
+import Container from "@/components/mobiflight/container.astro"
+interface Props {
+  headline: string
+  tagline: string
+  ctaText?: string
+  ctaLink?: string
+  imageSrc: string
+}
+const { headline, tagline, ctaText, ctaLink, imageSrc } = Astro.props
+---
+
+<div
+  class="relative w-full lg:max-h-96 overflow-hidden bg-linear-to-br from-gray-700 to-sky-900"
+>
+  <img
+    src={imageSrc}
+    alt="Hero Image"
+    class="object-cover blur-xs opacity-40 w-full"
+  />
+  <div class="absolute inset-0 flex items-center justify-center">
+    <Container>
+      <div class="flex flex-col gap-6 items-start text-white max-w-4xl">
+        <h1 class="text-7xl font-bold text-background">{headline}</h1>
+        <p class="text-2xl">{tagline}</p>
+        {ctaText && ctaLink && <Button href={ctaLink}>{ctaText}</Button>}
+      </div>
+    </Container>
+  </div>
+</div>

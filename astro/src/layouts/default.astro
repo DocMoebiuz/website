@@ -13,22 +13,23 @@ import "@/styles/mobiflight.css"
     <!-- <BaseHead title={title}/> -->
   </head>
   <body class="flex flex-col">
-    <div class="flex justify-center bg-linear-to-br from-sky-500 to-emerald-500 dark:from-indigo-500/10 dark:via-sky-500/0 dark:via-70% dark:to-emerald-500/5">
+    <div
+      class="flex justify-center bg-linear-to-br from-sky-500 to-emerald-500 dark:from-indigo-500/10 dark:via-sky-500/0 dark:via-70% dark:to-emerald-500/5"
+    >
       <nav
-        class="flex flex-row gap-8 py-4 items-center w-full max-w-6xl justify-items-start font-semibold uppercase text-white text-lg"
+        class="flex flex-row gap-8 px-8 py-4 items-center w-full max-w-6xl justify-items-start font-semibold uppercase text-white"
       >
         <img
           src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
           alt="Logo"
           class="h-8 mr-4"
         />
-        <a href="#" class="">Boards & Wiring</a>
-        <a href="#" class="">Posts</a>
-        <a href="#" class="">Contact</a>
+        <a href="/index.html" class="">Home</a>
+        <a href="/download" class="">Download</a>
+        <a href="/services" class="">Services</a>
       </nav>
     </div>
-    <h1>{title}</h1>
-    <article>
+    <article class="flex flex-col items-center w-full">
       <slot />
       <!-- your content is injected here -->
     </article>
