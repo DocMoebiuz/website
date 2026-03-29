@@ -14,49 +14,52 @@ const sponsors = (sponsorData as Sponsor[]).toSorted((a, b) => {
   if (b.amount !== a.amount) return b.amount - a.amount
   return a.name.localeCompare(b.name)
 })
-
 ---
 
 <!-- Sponsor Wall -->
 <Container>
-  <section class="py-8 border-t">
-    <h2 class="text-3xl font-bold mb-2">Powered by Our Sponsors</h2>
-    <p class="text-muted-foreground mb-6">
-      MobiFlight is free because of the amazing people and companies who support
-      it.
-    </p>
+  <section class="py-8 border-t flex flex-col gap-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-2">Powered by Our Sponsors</h2>
+      <p class="text-muted-foreground mb-6">
+        MobiFlight is free because of the amazing people and companies who
+        support it.
+      </p>
+    </div>
     <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
-      {sponsors.map((sponsor) =>
-        sponsor.href ? (
-          <a
-            href={sponsor.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={`Visit the ${sponsor.name} website`}
-            class="inline-flex items-center justify-center"
-          >
-            <img
-              src={sponsor.logo}
-              alt={`${sponsor.name} logo`}
-              class:list={[
-                "w-auto max-w-full object-contain hover:grayscale-0 transition-all",
-                sponsor.sizeClass,
-              ]}
-            />
-          </a>
-        ) : (
-          <div class="inline-flex items-center justify-center">
-            <img
-              src={sponsor.logo}
-              alt={`${sponsor.name} logo`}
-              class:list={[
-                "w-auto max-w-full object-contain",
-                sponsor.sizeClass,
-              ]}
-            />
-          </div>
+      {
+        sponsors.map((sponsor) =>
+          sponsor.href ? (
+            <a
+              href={sponsor.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Visit the ${sponsor.name} website`}
+              class="inline-flex items-center justify-center"
+            >
+              <img
+                src={sponsor.logo}
+                alt={`${sponsor.name} logo`}
+                class:list={[
+                  "w-auto max-w-full object-contain hover:grayscale-0 transition-all",
+                  sponsor.sizeClass,
+                ]}
+              />
+            </a>
+          ) : (
+            <div class="inline-flex items-center justify-center">
+              <img
+                src={sponsor.logo}
+                alt={`${sponsor.name} logo`}
+                class:list={[
+                  "w-auto max-w-full object-contain",
+                  sponsor.sizeClass,
+                ]}
+              />
+            </div>
+          ),
         )
-      )}
+      }
     </div>
     <a
       href="https://github.com/sponsors/MobiFlight"
