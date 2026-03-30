@@ -4,6 +4,10 @@ import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import Button from "@/components/starwind/button/Button.astro"
 import Link from "@/components/mobiflight/link.astro"
+import YoutubeVideo from "@/components/mobiflight/youtube-video.astro"
+import IconBulb from "@/components/mobiflight/icons/icon-bulb.astro"
+import Card from "@/components/starwind/card/Card.astro"
+import CardContent from "@/components/starwind/card/CardContent.astro"
 
 const heroImage =
   "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
@@ -19,10 +23,21 @@ const installerUrl =
   />
 
   <!-- Download status -->
-  <Container>
-    <section class="flex flex-row items-center gap-4 pt-4">
-      <p class="text-sm text-muted-foreground">
-        Your download should start automatically. If it does not, <Link id="download-link" link={installerUrl} rel="noopener noreferrer" class="text-primary">click here to manually download the installer</Link>.
+  <Container class="mt-4">
+    <section
+      class="shadow-md border-2 bg-primary/5 rounded-md px-8 py-4 flex flex-row items-center gap-2"
+    >
+      <div class="text-primary">
+        <IconBulb />
+      </div>
+      <p class="text-muted-foreground">
+        Your download should start automatically. If it does not, <Link
+          id="download-link"
+          link={installerUrl}
+          rel="noopener noreferrer"
+          class="text-primary"
+          >click here to manually download the installer</Link
+        >.
       </p>
     </section>
   </Container>
@@ -36,11 +51,13 @@ const installerUrl =
         configure your first working setup.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <article class="border rounded-xl p-6 flex flex-col gap-4">
-          <div
-            class="h-40 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
-          >
-            Placeholder: Documentation preview image
+        <div class="flex flex-col gap-4">
+          <div class="h-70">
+            <img
+              src="/images/download/getting-started.jpg"
+              alt="Documentation preview"
+              class="object-cover h-full w-full"
+            />
           </div>
           <h3 class="text-xl font-semibold">Quick-start documentation</h3>
           <p class="text-sm text-muted-foreground">
@@ -51,16 +68,18 @@ const installerUrl =
             href="https://docs.mobiflight.com"
             target="_blank"
             rel="noopener noreferrer"
-            variant="secondary"
+            variant="outline"
           >
             Open the docs
           </Button>
-        </article>
-        <article class="border rounded-xl p-6 flex flex-col gap-4">
-          <div
-            class="h-40 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
-          >
-            Placeholder: Getting started video preview
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="h-70">
+            <YoutubeVideo
+              src="https://www.youtube.com/embed/pS8KGfYRNrY?si=i0Bdz6K9lbW5Ocl0"
+              title="Getting started video"
+              class="h-full w-full"
+            />
           </div>
           <h3 class="text-xl font-semibold">Getting started video</h3>
           <p class="text-sm text-muted-foreground">
@@ -71,11 +90,11 @@ const installerUrl =
             href="https://www.youtube.com/@MobiFlightTeam"
             target="_blank"
             rel="noopener noreferrer"
-            variant="secondary"
+            variant="outline"
           >
             Watch on YouTube
           </Button>
-        </article>
+        </div>
       </div>
     </section>
   </Container>
@@ -91,11 +110,18 @@ const installerUrl =
         can support development and unlock more community benefits.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <article class="border rounded-xl p-6 flex flex-col gap-4">
-          <div
-            class="h-24 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
-          >
-            Placeholder: Donation icon or logo
+        <article class="p-6 flex flex-col gap-4">
+          <div class="h-70 grid grid-cols-2 gap-4">
+            <img
+              src="/images/download/octocat.png"
+              alt="GitHub logo"
+              class="object-cover h-full w-full"
+            />
+            <img
+              src="/images/download/paypal.png"
+              alt="PayPal logo"
+              class="object-contain h-full w-full"
+            />
           </div>
           <h3 class="text-xl font-semibold">Donate and sponsor</h3>
           <p class="text-sm text-muted-foreground">
@@ -107,7 +133,7 @@ const installerUrl =
               href="https://github.com/sponsors/MobiFlight"
               target="_blank"
               rel="noopener noreferrer"
-              variant="secondary"
+              variant="outline"
             >
               Sponsor on GitHub
             </Button>
@@ -121,25 +147,34 @@ const installerUrl =
             </Button>
           </div>
         </article>
-        <article class="border rounded-xl p-6 flex flex-col gap-4">
-          <div
-            class="h-24 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
+        <article class="p-6 flex flex-col gap-4">
+          <Card
+            class="h-70 shadow-lg border-2 bg-primary/5 text-center items-center justify-center"
           >
-            Placeholder: Membership / Club visual
-          </div>
+            <CardContent class="flex flex-col items-center gap-4">
+              <div class="flex flex-col gap-1 justify-center items-center">
+                <p class="text-lg">Join today for only</p>
+                <p class="text-6xl font-bold">5 EUR</p>
+                <p class="text-xl text-muted-foreground">per month</p>
+              </div>
+              <div class="flex justify-center">
+                <Button variant="primary" href="#">Become a member</Button>
+              </div>
+            </CardContent>
+          </Card>
           <h3 class="text-xl font-semibold">Membership and MobiFlight Club</h3>
           <p class="text-sm text-muted-foreground">
             Join the club for a closer connection to the community and future
             member-focused features at club.mobiflight.com.
           </p>
-          <Button
-            href="https://club.mobiflight.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="secondary"
-          >
-            Explore MobiFlight Club
-          </Button>
+          <div>
+            <Button
+              href="/club"
+              variant="outline"
+            >
+              Learn about the club
+            </Button>
+          </div>
         </article>
       </div>
     </section>
@@ -156,10 +191,12 @@ const installerUrl =
         you can use immediately with MobiFlight.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        <div
-          class="h-36 rounded-xl border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
-        >
-          Placeholder: Shop image A
+        <div class="h-70">
+          <img
+            src="/images/download/shop.jpg"
+            alt="Documentation preview"
+            class="object-cover h-full w-full"
+          />
         </div>
         <div class="md:col-span-1 flex flex-col items-start gap-4">
           <h3 class="text-xl font-semibold">MobiFlight Community Shop</h3>
@@ -171,7 +208,7 @@ const installerUrl =
             href="https://shop.mobiflight.com"
             target="_blank"
             rel="noopener noreferrer"
-            variant="secondary"
+            variant="outline"
           >
             Visit the shop
           </Button>
@@ -187,24 +224,29 @@ const installerUrl =
         Step 4: Get support and share your progress
       </h2>
       <p class="text-muted-foreground mb-6">
-        Join our Discord server to share your progress, ask questions, and connect with other MobiFlight builders and sim pilots around the world.
+        Join our Discord server to share your progress, ask questions, and
+        connect with other MobiFlight builders and sim pilots around the world.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        <div
-          class="h-36 rounded-xl border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
-        >
-          Placeholder: Discord image
+        <div class="h-70">
+          <img
+            src="/images/download/discord.jpg"
+            alt="Documentation preview"
+            class="object-cover h-full w-full"
+          />
         </div>
         <div class="md:col-span-1 flex flex-col items-start gap-4">
           <h3 class="text-xl font-semibold">MobiFlight Discord Community</h3>
           <p class="text-sm text-muted-foreground">
-            The heart of the MobiFlight ecosystem is the people who use it, and our Discord server is where they come together to help each other and share their creations. 
+            The heart of the MobiFlight ecosystem is the people who use it, and
+            our Discord server is where they come together to help each other
+            and share their creations.
           </p>
           <Button
             href="https://moibiflight.com/discord"
             target="_blank"
             rel="noopener noreferrer"
-            variant="secondary"
+            variant="outline"
           >
             Join the Discord
           </Button>
@@ -217,11 +259,11 @@ const installerUrl =
 <script is:inline>
   // Trigger the download automatically when the page loads
   window.addEventListener("DOMContentLoaded", () => {
-    const downloadLink = document.getElementById("download-link");
+    const downloadLink = document.getElementById("download-link")
     if (downloadLink) {
       setTimeout(() => {
-        downloadLink.click();
-      }, 3000); // Delay to ensure the page has loaded
+        downloadLink.click()
+      }, 3000) // Delay to ensure the page has loaded
     }
-  });
+  })
 </script>
