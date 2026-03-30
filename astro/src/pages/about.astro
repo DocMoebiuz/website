@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/starwind/card"
+import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
 
 const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 
@@ -47,7 +48,7 @@ const team = [
   <Hero
     headline="MobiFlight Project Information"
     tagline="MobiFlight connects cockpit hardware to your flight simulator and gives both sim enthusiasts and DIY builders a powerful platform to fly with real controls."
-    ctas={[{ text:"Download MobiFlight", link: "/download", variant: "primary" }]}
+    ctas={[{ icon: IconDownload,text:"Download MobiFlight", link: "/download", variant: "primary" }]}
     imageSrc={heroImage}
   />
 

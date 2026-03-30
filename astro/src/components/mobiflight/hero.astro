@@ -17,6 +17,7 @@ interface Props {
   headline: string
   tagline: string
   ctas?: {
+    icon?: any
     text: string
     link: string
     variant: ButtonVariant
@@ -40,7 +41,8 @@ const { headline, tagline, ctas, imageSrc } = Astro.props
       {
         ctas &&
           ctas.map((cta) => (
-            <Button variant={cta.variant} href={cta.link}>
+            <Button variant={cta.variant} href={cta.link} class="flex flex-row items-center gap-1">
+              {cta.icon && <cta.icon />} 
               {cta.text}
             </Button>
           ))

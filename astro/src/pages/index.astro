@@ -5,6 +5,8 @@ import Container from "@/components/mobiflight/container.astro"
 import News from "@/components/mobiflight/news.astro"
 import Sponsors from "@/components/mobiflight/sponsors.astro"
 import ValueProposition from "@/components/mobiflight/value-proposition.astro"
+import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
+import IconDocs from "@/components/mobiflight/icons/icon-docs.astro"
 
 const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 ---
@@ -14,8 +16,8 @@ const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepa
     headline="Manage your flight sim hardware"
     tagline="Easy. Free. 100% Open Source."
     ctas={[
-      { text: "Download Free", link: "/download", variant: "primary" },
-      { text: "View Docs", link: "https://docs.mobiflight.com", variant: "outline" }
+      { icon: IconDownload, text: "Download Free", link: "/download", variant: "primary" },
+      { icon: IconDocs, text: "View Docs", link: "https://docs.mobiflight.com", variant: "outline" }
     ]}
     imageSrc={heroImage}
   />

@@ -3,8 +3,11 @@ import Default from "../layouts/default.astro"
 import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import Button from "@/components/starwind/button/Button.astro"
+import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
+import IconGithub from "@/components/mobiflight/icons/icon-github.astro"
 
-const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+const heroImage =
+  "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 ---
 
 <Default title="Download MobiFlight — It's Free.">
@@ -18,13 +21,20 @@ const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepa
   <Container>
     <section class="py-8">
       <h2 class="text-3xl font-bold mb-2">Latest Release</h2>
-      <p class="text-muted-foreground mb-4">Version <strong>v11</strong> &mdash; Released March 15, 2026</p>
-      <p class="mb-6">Fresh new look, redesigned UI, new project concepts, easier sharing, and improved stability.</p>
+      <p class="text-muted-foreground mb-4">
+        Version <strong>v11</strong> &mdash; Released March 15, 2026
+      </p>
+      <p class="mb-6">
+        Fresh new look, redesigned UI, new project concepts, easier sharing, and
+        improved stability.
+      </p>
       <div class="flex flex-wrap gap-4">
         <Button
-        variant="primary"
+          variant="primary"
           href="/download/thank-you"
+          class="flex flex-row items-center gap-1"
         >
+          <IconDownload />
           Download MobiFlight-Setup.exe
         </Button>
         <Button
@@ -32,8 +42,10 @@ const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepa
           target="_blank"
           rel="noopener noreferrer"
           variant="outline"
+          class="flex flex-row items-center gap-1"
         >
-          All Releases on GitHub &rarr;
+          <IconGithub />
+          All Releases on GitHub
         </Button>
       </div>
     </section>
@@ -65,15 +77,18 @@ const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepa
   <Container>
     <section class="py-8 border-t">
       <h2 class="text-3xl font-bold mb-4">See It in Action</h2>
-      <p class="text-muted-foreground mb-4">The Biggest MobiFlight Release Ever! — Release 11</p>
-      <div class="aspect-video w-full max-w-3xl rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+      <p class="text-muted-foreground mb-4">
+        The Biggest MobiFlight Release Ever! — Release 11
+      </p>
+      <div
+        class="aspect-video w-full max-w-3xl rounded-lg overflow-hidden bg-muted flex items-center justify-center"
+      >
         <iframe
           src="https://www.youtube.com/embed/Nm7twnZsqIo?si=4L_kjoosjWsyNgQz"
           title="MobiFlight v11 Release Video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-          class="w-full h-full"
-        ></iframe>
+          class="w-full h-full"></iframe>
       </div>
     </section>
   </Container>
@@ -82,7 +97,10 @@ const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepa
   <Container>
     <section class="py-8 border-t">
       <h2 class="text-3xl font-bold mb-4">Previous Versions & Source Code</h2>
-      <p class="mb-4">MobiFlight is fully open source. Explore the source code, contribute, or report issues.</p>
+      <p class="mb-4">
+        MobiFlight is fully open source. Explore the source code, contribute, or
+        report issues.
+      </p>
       <div class="flex flex-wrap gap-4">
         <a
           href="https://github.com/MobiFlight/MobiFlight-Connector/releases"
