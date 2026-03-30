@@ -1,6 +1,9 @@
 ---
+type Props = {
+  class?: string
+}
 const { class: className, ...rest } = Astro.props
 ---
-<div class={`w-full max-w-6xl mx-auto px-6 py-4 ${className}`} {...rest}>
+<div class={`w-full max-w-6xl mx-auto px-6 py-4 ${className ?? ""}`} {...rest}>
   <slot />
 </div>
