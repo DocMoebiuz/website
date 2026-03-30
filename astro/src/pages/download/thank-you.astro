@@ -1,0 +1,214 @@
+---
+import Default from "@/layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+import Container from "@/components/mobiflight/container.astro"
+import Button from "@/components/starwind/button/Button.astro"
+
+const heroImage =
+  "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+const installerUrl =
+  "https://mobiflight.com/tl_files/download/releases/installer/mobiflight-setup.exe"
+---
+
+<Default title="Thanks for downloading MobiFlight">
+  <Hero
+    headline="Thanks for downloading MobiFlight"
+    tagline="Your installer should start automatically. While you wait, here are the best next steps."
+    imageSrc={heroImage}
+  />
+
+  <!-- Download status -->
+  <Container>
+    <section class="flex flex-row items-center gap-4 pt-4">
+      <p class="text-sm text-muted-foreground">
+        Your download should start automatically. If it does not, <a href={installerUrl} target="_blank" rel="noopener noreferrer">click here to manually download the installer</a>.
+      </p>
+    </section>
+  </Container>
+
+  <!-- Step 1: Docs and video -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">Step 1: Learn the basics</h2>
+      <p class="text-muted-foreground mb-6">
+        Start with the quick-start docs and the getting-started video to
+        configure your first working setup.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="border rounded-xl p-6 flex flex-col gap-4">
+          <div
+            class="h-40 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
+          >
+            Placeholder: Documentation preview image
+          </div>
+          <h3 class="text-xl font-semibold">Quick-start documentation</h3>
+          <p class="text-sm text-muted-foreground">
+            Follow the starter guide for MSFS and X-Plane, from first connection
+            to first working button mapping.
+          </p>
+          <Button
+            href="https://docs.mobiflight.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+          >
+            Open the docs
+          </Button>
+        </article>
+        <article class="border rounded-xl p-6 flex flex-col gap-4">
+          <div
+            class="h-40 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
+          >
+            Placeholder: Getting started video preview
+          </div>
+          <h3 class="text-xl font-semibold">Getting started video</h3>
+          <p class="text-sm text-muted-foreground">
+            Watch the full walkthrough and see how a complete setup is built
+            from install to first flight.
+          </p>
+          <Button
+            href="https://www.youtube.com/@MobiFlightTeam"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+          >
+            Watch on YouTube
+          </Button>
+        </article>
+      </div>
+    </section>
+  </Container>
+
+  <!-- Step 2: Support and club -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">
+        Step 2: Support the project and join the club
+      </h2>
+      <p class="text-muted-foreground mb-6">
+        MobiFlight is free and open source. If it helps your sim experience, you
+        can support development and unlock more community benefits.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="border rounded-xl p-6 flex flex-col gap-4">
+          <div
+            class="h-24 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
+          >
+            Placeholder: Donation icon or logo
+          </div>
+          <h3 class="text-xl font-semibold">Donate and sponsor</h3>
+          <p class="text-sm text-muted-foreground">
+            Help keep MobiFlight free for everyone by supporting recurring
+            development and maintenance.
+          </p>
+          <div class="flex gap-3 flex-wrap">
+            <Button
+              href="https://github.com/sponsors/MobiFlight"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+            >
+              Sponsor on GitHub
+            </Button>
+            <Button
+              href="https://www.paypal.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+            >
+              Donate via PayPal
+            </Button>
+          </div>
+        </article>
+        <article class="border rounded-xl p-6 flex flex-col gap-4">
+          <div
+            class="h-24 rounded-lg border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
+          >
+            Placeholder: Membership / Club visual
+          </div>
+          <h3 class="text-xl font-semibold">Membership and MobiFlight Club</h3>
+          <p class="text-sm text-muted-foreground">
+            Join the club for a closer connection to the community and future
+            member-focused features at club.mobiflight.com.
+          </p>
+          <Button
+            href="https://club.mobiflight.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+          >
+            Explore MobiFlight Club
+          </Button>
+        </article>
+      </div>
+    </section>
+  </Container>
+
+  <!-- Step 3: Shop and hardware -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">
+        Step 3: Get hardware and start building
+      </h2>
+      <p class="text-muted-foreground mb-6">
+        Visit the community shop for starter-compatible hardware and accessories
+        you can use immediately with MobiFlight.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div
+          class="h-36 rounded-xl border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
+        >
+          Placeholder: Shop image A
+        </div>
+        <div class="md:col-span-1 flex flex-col items-start gap-4">
+          <h3 class="text-xl font-semibold">MobiFlight Community Shop</h3>
+          <p class="text-sm text-muted-foreground">
+            Boards, modules, and cockpit accessories selected to work well with
+            the MobiFlight ecosystem.
+          </p>
+          <Button
+            href="https://shop.mobiflight.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+          >
+            Visit the shop
+          </Button>
+        </div>
+      </div>
+    </section>
+  </Container>
+
+  <!-- Step 4: Join the Community -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">
+        Step 4: Get support and share your progress
+      </h2>
+      <p class="text-muted-foreground mb-6">
+        Join our Discord server to share your progress, ask questions, and connect with other MobiFlight builders and sim pilots around the world.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div
+          class="h-36 rounded-xl border-2 border-dashed bg-muted/60 flex items-center justify-center text-sm text-muted-foreground"
+        >
+          Placeholder: Discord image
+        </div>
+        <div class="md:col-span-1 flex flex-col items-start gap-4">
+          <h3 class="text-xl font-semibold">MobiFlight Discord Community</h3>
+          <p class="text-sm text-muted-foreground">
+            The heart of the MobiFlight ecosystem is the people who use it, and our Discord server is where they come together to help each other and share their creations. 
+          </p>
+          <Button
+            href="https://moibiflight.com/discord"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+          >
+            Join the Discord
+          </Button>
+        </div>
+      </div>
+    </section>
+  </Container>
+</Default>
