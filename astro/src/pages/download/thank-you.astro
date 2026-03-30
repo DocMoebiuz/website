@@ -3,11 +3,12 @@ import Default from "@/layouts/default.astro"
 import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import Button from "@/components/starwind/button/Button.astro"
+import Link from "@/components/mobiflight/link.astro"
 
 const heroImage =
   "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 const installerUrl =
-  "https://mobiflight.com/tl_files/download/releases/installer/mobiflight-setup.exe"
+  "https://mobiflight.com/tl_files/download/releases/installer/1.5.0/mobiflight-setup.exe"
 ---
 
 <Default title="Thanks for downloading MobiFlight">
@@ -21,7 +22,7 @@ const installerUrl =
   <Container>
     <section class="flex flex-row items-center gap-4 pt-4">
       <p class="text-sm text-muted-foreground">
-        Your download should start automatically. If it does not, <a href={installerUrl} target="_blank" rel="noopener noreferrer">click here to manually download the installer</a>.
+        Your download should start automatically. If it does not, <Link id="download-link" link={installerUrl} rel="noopener noreferrer" class="text-primary">click here to manually download the installer</Link>.
       </p>
     </section>
   </Container>
@@ -212,3 +213,15 @@ const installerUrl =
     </section>
   </Container>
 </Default>
+
+<script is:inline>
+  // Trigger the download automatically when the page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    const downloadLink = document.getElementById("download-link");
+    if (downloadLink) {
+      setTimeout(() => {
+        downloadLink.click();
+      }, 3000); // Delay to ensure the page has loaded
+    }
+  });
+</script>

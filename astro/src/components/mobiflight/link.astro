@@ -1,0 +1,21 @@
+---
+interface Props {
+  link: string
+  target?: string
+  class?: string
+  rel?: string
+  id?: string
+}
+const { link, target, class: className, rel, id, ...rest } = Astro.props
+---
+
+<a
+  href={link}
+  target={target}
+  id={id}
+  rel={rel}
+  class={`text-primary hover:text-primary-accent visited:text-primary/80 ${className}`}
+  {...rest}
+>
+  <slot />
+</a>
