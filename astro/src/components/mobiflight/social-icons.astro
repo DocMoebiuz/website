@@ -4,9 +4,10 @@ import YoutubeIcon from "@/components/mobiflight/icons/icon-youtube.astro"
 import DiscordIcon from "@/components/mobiflight/icons/icon-discord.astro"
 
 interface Props {
+  class?: string
   variant: "full" | "icon"
 }
-const { variant } = Astro.props
+const { variant, class: className } = Astro.props
 
 const socials = [
   {
@@ -33,7 +34,7 @@ const socials = [
       href={social.href}
       target="_blank"
       rel="noopener noreferrer"
-      class="text-muted-foreground hover:text-primary transition-colors"
+      class={`hover:text-primary transition-colors ${className}`}
     >
       <span class={ variant === "full" ? "" : "sr-only" }>{social.name}</span>
       <social.icon class="w-6 h-6" />
