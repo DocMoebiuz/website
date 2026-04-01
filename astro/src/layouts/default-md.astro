@@ -1,0 +1,37 @@
+---
+// import BaseHead from '../components/BaseHead.astro';
+// import Footer from '../components/Footer.astro';
+const { title } = Astro.props
+// style import
+import "@/styles/mobiflight.css"
+import Footer from "@/components/mobiflight/footer.astro"
+import Navigation from "@/components/mobiflight/navigation.astro"
+import Container from "@/components/mobiflight/container.astro"
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="/font/Manrope-VariableFont_wght.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- <BaseHead title={title}/> -->
+  </head>
+  <body class="flex flex-col overflow-x-hidden">
+    <Navigation />
+    <article class="flex flex-col items-center w-full">
+      <Container>
+        <div class="prose max-w-full pt-8">
+          <slot />
+        </div>
+      </Container>
+      <!-- your content is injected here -->
+    </article>
+    <Footer />
+  </body>
+</html>
