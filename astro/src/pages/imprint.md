@@ -13,7 +13,7 @@ MobiFlight\
 Sebastian Möbius\
 Schneider-Bäumles-Weg 3
 
-71366 Waiblingen\
+71336 Waiblingen\
 Baden-Württemberg, Deutschland
 
 ---
