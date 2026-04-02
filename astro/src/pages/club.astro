@@ -14,6 +14,8 @@ import Card from "@/components/starwind/card/Card.astro"
 import CardContent from "@/components/starwind/card/CardContent.astro"
 
 const heroImage = "/images/hero-club.jpg"
+const clubSignupUrl = import.meta.env.PUBLIC_CLUB_SIGNUP_URL || "https://club.mobiflight.com/signup"
+const clubLoginUrl = import.meta.env.PUBLIC_CLUB_LOGIN_URL || "https://club.mobiflight.com"
 
 const benefits = [
   {
@@ -62,8 +64,8 @@ const benefits = [
     headline="Join the MobiFlight Club — Fly Further Together"
     tagline="For the builders, tinkerers, and sim pilots who want more."
     ctas={[
-      { text: "Become a Member", link: "#join", variant: "primary" },
-      { text: "Login", link: "#join", variant: "outline" },
+      { text: "Become a Member", link: clubSignupUrl, variant: "primary" },
+      { text: "Login", link: clubSignupUrl, variant: "outline" },
     ]}
     imageSrc={heroImage}
   />
@@ -116,12 +118,12 @@ const benefits = [
           <p class="text-xl text-muted-foreground">per month</p>
         </div>
         <div class="flex justify-center">
-          <Button variant="primary" href="#">Become a member</Button>
+          <Button variant="primary" href={clubSignupUrl}>Become a member</Button>
         </div>
       </CardContent>
     </Card>
     <div class="flex justify-center">
-      <Link link="#"> Already a member? Log in </Link>
+      <Link link={clubLoginUrl}> Already a member? Log in </Link>
     </div>
   </Container>
 </Default>
