@@ -1,0 +1,10 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/donate",
+      "redirect": "https://discord.gg/MP37wt8sCm",
+      "statusCode": 301
+    }
+  ]
+}
