@@ -1,9 +1,10 @@
 ---
 import Default from "@/layouts/default.astro"
-import NewsletterForm from "@/components/mobiflight/newsletter/form.astro"
 import Container from "@/components/mobiflight/container.astro"
 import Hero from "@/components/mobiflight/hero.astro"
 import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.astro"
+import MemberJoinBox from "@/components/mobiflight/member/join-box.astro"
+import Link from "@/components/mobiflight/link.astro"
 
 const heroImage =
   "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
@@ -18,13 +19,18 @@ const heroImage =
     ctas={[]}
     imageSrc={heroImage}
   />
-  <Container class="py-16 pb-32">
-    <div class="flex flex-col gap-4 rounded-xl border bg-popover p-6 shadow-lg">
+  <Container class="py-16 pb-16">
+    <div class="flex flex-col gap-4 rounded-xl border p-6">
       <h2 class="text-3xl font-bold">Thank You!</h2>
       <p class="flex flex-row gap-2">
         <span class="text-primary"><IconCheckCircle /></span>You have
         successfully joined our subscriber list.
       </p>
     </div>
+  </Container>
+  <Container class="flex flex-col gap-4">
+    <h2 class="text-3xl font-bold">Want more?</h2>
+    <p>Become a <Link link="/club" class="font-bold">MobiFlight Club Member</Link> and play a crucial role in the MobiFlight community and <Link link="/club">enjoy exclusive benefits.</Link></p>
+    <MemberJoinBox />
   </Container>
 </Default>
