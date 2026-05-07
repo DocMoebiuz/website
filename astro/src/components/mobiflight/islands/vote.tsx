@@ -49,6 +49,37 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
       })
   }
 
+  async function handleRemoveVote(itemId: string) {
+    const auth = getAuth()
+    const user = await auth.getUser()
+
+    if (!user || user.expired) {
+      await auth.signinRedirect({
+        state: { returnTo: "/roadmap", voteItemId: itemId },
+      })
+      return
+    }
+
+    await fetch(`${apiBase}/api/votes/roadmap/${voteItemId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.id_token}`,
+      },
+      body: JSON.stringify({ itemId }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Vote request failed with status ${res.status}`)
+        }
+        return res.json()
+      })
+      .then((data) => {
+        setCurrentVotes((prev) => prev - 1)
+        setHasVoted(false)
+      })
+  }
+
   useEffect(() => {
     const fetchVotes = async () => {
       const user = await getAuth().getUser()
@@ -78,22 +109,19 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
       >
         <IconThumbUp />
         <span className="min-w-4">{currentVotes ?? 0}</span>
-        {!hasVoted ? (
-          <Button
-            variant="default"
-            size={"sm"}
-            className="rounded-l-none pl-3"
-            onClick={() => {
-              handleVote(voteItemId)
-            }}
-          >
-           <span className="min-w-5">+1</span>
-          </Button>
-        ) : (
-          <div className="p-2.5 px-4 flex items-center bg-foreground rounded-md rounded-l-none [&_svg]:stroke-background min-w-2.5">
-            <IconSquareRoundedCheck />
-          </div>
-        )}
+        <Button
+          variant="default"
+          size={"sm"}
+          className="rounded-l-none pl-3"
+          onClick={() => {
+            if (!hasVoted) handleVote(voteItemId)
+            else handleRemoveVote(voteItemId)
+          }}
+        >
+          <span className="min-w-3">
+            {!hasVoted ? "+1": <IconSquareRoundedCheck />}
+          </span>
+        </Button>
       </Badge>
     </div>
   )
