@@ -65,14 +65,16 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
             className="rounded-l-none pl-3"
             onClick={() => {
               handleVote(voteItemId)
-          }}
+            }}
           >
             {" "}
             +1{" "}
           </Button>
-        ) : 
-        (<div className="p-2.5 px-3"><IconSquareRoundedCheck /></div>)
-      }
+        ) : (
+          <div className="p-2.5 px-3">
+            <IconSquareRoundedCheck />
+          </div>
+        )}
       </Badge>
     </div>
   )
