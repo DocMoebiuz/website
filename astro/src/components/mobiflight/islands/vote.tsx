@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { Badge } from "./shadcn/components/ui/Badge"
 import { Button } from "./shadcn/components/ui/Button"
 import IconThumbUp from "@/components/mobiflight/islands/icons/icon-thumb-up"
 import { getAuth } from "@/lib/auth/oidc.config"
 import IconSquareRoundedCheck from "@/components/mobiflight/islands/icons/icon-square-rounded-check"
-import { loadAllVotes, castVote, removeVote, type VoteRecord } from "@/lib/votes.service"
+import { loadAllVotes, castVote, removeVote } from "@/lib/votes.service"
 import IconStop from "@/components/mobiflight/islands/icons/icon-stop"
 import { useStore } from "@nanostores/react"
 import { $votes, $hasRemainingVotes } from "@/lib/votes.store"
@@ -30,7 +30,7 @@ const Vote = ({ voteCount, voteItemId, canVote }: VoteProps) => {
 
     if (!user || user.expired) {
       await auth.signinRedirect({
-        state: { returnTo: "/roadmap", voteItemId: itemId },
+        state: { returnTo: "/roadmap", itemId: itemId },
       })
       return
     }
@@ -49,7 +49,7 @@ const Vote = ({ voteCount, voteItemId, canVote }: VoteProps) => {
 
     if (!user || user.expired) {
       await auth.signinRedirect({
-        state: { returnTo: "/roadmap", voteItemId: itemId },
+        state: { returnTo: "/roadmap", itemId: itemId },
       })
       return
     }
