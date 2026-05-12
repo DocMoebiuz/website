@@ -25,13 +25,13 @@ const roadmap = [
     id: "variable-management",
     title: "MobiFlight Variable Management",
     problem:
-      "MobiFlight variables are currently not managed in a clear, central place. That makes them harder to inspect, reuse, and control across projects and profiles.",
+      "MobiFlight variables are currently not managed in a user-friendly, central place. That makes them harder to inspect, debug, reuse, and share across projects and profiles (tabs).",
     outcome:
-      "A dedicated variable management system will make MobiFlight variables easier to understand and work with. It also creates the foundation for features like remote control, profile management, and real-time monitoring.",
+      "A dedicated variable management system with quick access and intuitive controls will make MobiFlight variables easier to understand and work with.",
     features: [
       "Define MobiFlight variables in one central location",
       "Inspect and watch MobiFlight variables directly",
-      "Control whether variables are scoped to a project or a profile",
+      "Control whether variables are scoped to the project or a profile",
     ],
     issues: [2635],
   },
@@ -39,7 +39,7 @@ const roadmap = [
     id: "config-wizards",
     title: "Rework Config Wizards",
     problem:
-      "The current configuration wizards can feel outdated and harder to follow than they should be, especially for users who are still learning the workflow.",
+      "The current configuration wizards are still based on the old UI framework. They feel outdated and harder to follow than they should be, especially for users who are still learning the workflow.",
     outcome:
       "A reworked wizard experience will make configuration steps clearer, more modern, and easier to navigate. With the new UI framework, the setup flow can become more intuitive and responsive.",
     features: [
@@ -53,7 +53,7 @@ const roadmap = [
     id: "saitek-panels",
     title: "Support Saitek Panels",
     problem:
-      "Users with Saitek panels currently cannot integrate these devices with MobiFlight, which limits supported cockpit hardware options.",
+      "Users with Saitek panels currently cannot use these devices with MobiFlight because they are non-standard USB HID controllers.",
     outcome:
       "Adding support for Saitek panels will make it easier for more cockpit builders to keep using their existing hardware within the MobiFlight ecosystem.",
     features: [
@@ -67,13 +67,13 @@ const roadmap = [
     id: "controller-management-ui",
     title: "New Controller Management UI",
     problem:
-      "Managing controllers should be easier, clearer, and more confidence-inspiring, especially when configuring devices, checking functionality, or updating firmware.",
+      "Current controller management has flaws and is complex, especially for new users. The process should be clearer, simpler and more intuitive, especially when onboarding controllers, configuring devices, or updating firmware.",
     outcome:
-      "A redesigned controller management experience will make connected devices easier to understand and maintain. It should reduce friction during setup and make essential controller tasks much more straightforward.",
+      "A redesigned controller management experience will make using and configuring controllers straight-forward. It should reduce friction during initial setup and make essential controller configurartion tasks much more straightforward.",
     features: [
       "A new look and feel for controller management dialogs",
       "Built-in testing and verification for connected controllers",
-      "A guided firmware installation and update process",
+      "A guided firmware installation and update process"
     ],
     issues: [2338],
   },
@@ -81,7 +81,7 @@ const roadmap = [
     id: "remote-connection",
     title: "Remote Connection via Network",
     problem:
-      "Running MobiFlight on the same machine as the simulator can limit flexibility and consume resources that some setups would rather keep free.",
+      "Running MobiFlight on the same machine as the simulator is consuming resources that should be exclusively available for the sim.",
     outcome:
       "Network-based simulator connections will allow MobiFlight to run on a separate machine, making more advanced or distributed setups easier to build and manage.",
     features: [
