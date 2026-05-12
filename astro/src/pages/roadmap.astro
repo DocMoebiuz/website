@@ -4,6 +4,7 @@ import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import heroImage from "@/images/hero-roadmap.jpg"
 import RoadmapItem from "@/components/mobiflight/roadmap/roadmap-item.astro"
+import IconSpeakerphone from "@/components/mobiflight/icons/icon-speakerphone.astro"
 
 const roadmap = [
   {
@@ -99,6 +100,36 @@ const roadmap = [
     imageSrc={heroImage.src}
   />
 
+  <Container class="mt-8">
+    <h2 class="text-2xl font-bold mb-4 flex flex-row items-center gap-2">
+      <IconSpeakerphone /> Get a voice, get involved
+    </h2>
+    <p>
+      <a href="/club">MobiFlight Club members</a> get early access to roadmap updates,
+      a direct line for feedback, and the opportunity to help shape the future of
+      MobiFlight. Join the club to have your say in what we build next!
+    </p>
+  </Container>
+
+  <div class="w-full bg-muted my-8 py-4">
+    <Container class="flex flex-col gap-4">
+      <h2 class="text-xl">
+        MobiFlight is a community-driven project, and we want to share our plans
+        and priorities.
+      </h2>
+      <p>
+        This roadmap outlines the key features and improvements we are working
+        on, as well as some of our longer-term goals. We also welcome feedback
+        and contributions from the community, so if you have ideas or want to
+        get involved, please join us on our forums or Discord or directly via
+        GitHub!
+      </p>
+    </Container>
+  </div>
+
+  <Container>
+    <h2 class="text-4xl font-bold">Roadmap 2026 - Summer / Fall</h2>
+  </Container>
   {
     roadmap.map((item) => (
       <Container class="flex flex-col gap-2 mb-8 rounded-xl border p-5 bg-muted/20 mt-8">
